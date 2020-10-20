@@ -8,7 +8,6 @@ const {verificaToken, verificaAdmin_Role} = require('../middlewares/authenticati
 const app = express();
 
 // Listar usuarios
-// app.get('/usuario', (req, res) => {
 app.get('/usuario', verificaToken, (req, res) => {  
     let desde = req.query.desde || 0;
         desde = Number(desde);
@@ -63,7 +62,7 @@ app.post('/usuario', [verificaToken, verificaAdmin_Role], function(req, res) {
 
     });
     
-  });
+});
 
 app.put('/usuario/:id', [verificaToken, verificaAdmin_Role], function(req, res) {
 
@@ -112,7 +111,6 @@ app.delete('/usuario/:id', [verificaToken, verificaAdmin_Role], function(req, re
                   message: 'Usuario no encontrado'
             }
           });
-
         }
 
         res.json({
