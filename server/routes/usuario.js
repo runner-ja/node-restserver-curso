@@ -7,7 +7,9 @@ const {verificaToken, verificaAdmin_Role} = require('../middlewares/authenticati
 
 const app = express();
 
+//======================
 // Listar usuarios
+//======================
 app.get('/usuario', verificaToken, (req, res) => {  
     let desde = req.query.desde || 0;
         desde = Number(desde);
@@ -37,7 +39,9 @@ app.get('/usuario', verificaToken, (req, res) => {
                 });
   });
 
+//======================
 // Crear usuarios  
+//======================
 app.post('/usuario', [verificaToken, verificaAdmin_Role], function(req, res) {
 
     let body = req.body;
@@ -59,11 +63,12 @@ app.post('/usuario', [verificaToken, verificaAdmin_Role], function(req, res) {
           ok: true,
           usuario: usuarioDB
         });
-
-    });
-    
+    });    
 });
 
+//======================
+// Actualizar usuarios  
+//======================
 app.put('/usuario/:id', [verificaToken, verificaAdmin_Role], function(req, res) {
 
       let id = req.params.id;
@@ -85,7 +90,9 @@ app.put('/usuario/:id', [verificaToken, verificaAdmin_Role], function(req, res) 
       })
 });
     
-
+//======================
+// Borrar usuarios  
+//======================
 app.delete('/usuario/:id', [verificaToken, verificaAdmin_Role], function(req, res) {
 
       let id = req.params.id;
@@ -117,11 +124,7 @@ app.delete('/usuario/:id', [verificaToken, verificaAdmin_Role], function(req, re
                   ok: true,
                   usuario: usuarioBorrado
         });
-
-      });
-
-
-    
+      });    
 });
 
 module.exports = app;

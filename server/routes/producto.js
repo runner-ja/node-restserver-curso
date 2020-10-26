@@ -30,7 +30,7 @@ app.get('/productos', verificaToken, (req, res) =>{
             return res.status(500).json({
                    ok: false,
                    err:{
-                       message: 'error del servidor'
+                       message: 'Error del servidor'
                    }
             });
         }
@@ -79,8 +79,6 @@ app.get('/productos/:id', verificaToken, (req, res) =>{
             producto: productoDB
         });
     });
-
-
 });
 
 //====================
@@ -186,12 +184,9 @@ app.put('/productos/:id', verificaToken, (req, res) =>{
                 res.json({
                     ok: true,
                     producto: productoGuardado
-                });
-        
+                });        
             });
-
         });
-
 });
 
 //====================

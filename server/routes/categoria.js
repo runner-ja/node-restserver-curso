@@ -167,11 +167,7 @@ app.delete('/categoria/:id', [verificaToken, verificaAdmin_Role], (req, res) =>{
         });
 
     });
-    
-
 });
-
-
 
 
 

@@ -9,6 +9,8 @@
 
 </head>
 <body>
+    <!-- <img src="http://localhost:3000/imagen/usuarios/5f8496dd6c20de3284877a38-460.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7InJvbGUiOiJBRE1JTl9ST0xFIiwiZXN0YWRvIjp0cnVlLCJnb29nbGUiOmZhbHNlLCJfaWQiOiI1Zjg0OTZkZDZjMjBkZTMyODQ4NzdhMzgiLCJub21icmUiOiJKb3JnZSBBcm1hbmRvIEF2aWxhIEhlcnJlcmEiLCJlbWFpbCI6Im1pZW1haWwxQGVtYWlsLmNvbSIsIl9fdiI6MCwiaW1nIjoiNWY4NDk2ZGQ2YzIwZGUzMjg0ODc3YTM4LTQ2MC5qcGcifSwiaWF0IjoxNjAzNzI2NzY3LCJleHAiOjE2MDM4OTk1Njd9.CC9l8Pa3f5CG67vd1wtXkwMLjTDMs1WjeyEm6F3HeJw" alt=""> -->
+    
     <div class="g-signin2" data-onsuccess="onSignIn"></div>
 
     <a href="#" onclick="signOut();">Sign out</a>
@@ -30,7 +32,7 @@
                 console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
 
                 var id_token = googleUser.getAuthResponse().id_token;   
-                
+                                
                 console.log('This is the token: ', id_token);
 
                 var token = { token: id_token }

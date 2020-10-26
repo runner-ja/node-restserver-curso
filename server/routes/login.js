@@ -136,14 +136,9 @@ app.post('/google', async (req, res) => {
                     usuario: usuarioDB,
                     token
                 });
-
             });
-
-
         }
     });
-
-
 });
 
 module.exports = app;
